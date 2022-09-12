@@ -5,10 +5,11 @@ import (
 
 	"simple_api/models/request"
 	"simple_api/models/response"
+	"simple_api/store/mysql/customers"
 )
 
-func (s customerService) InsertCustomers(req request.InsertCustomers) (*response.InsertCustomersResponse, error) {
-	err := s.SQL.InsertCustomers(req)
+func InsertCustomers(req request.InsertCustomers) (*response.InsertCustomersResponse, error) {
+	err := customers.InsertCustomers(req)
 	if err != nil {
 		fmt.Printf("Error inserting customers : %v", err)
 		return nil, err
@@ -22,8 +23,8 @@ func (s customerService) InsertCustomers(req request.InsertCustomers) (*response
 	return resp, nil
 }
 
-func (s customerService) GetCustomerDetail(req request.GetCustomers) (*response.GetCustomersResponse, error) {
-	resp, err := s.SQL.GetCustomers(req)
+func GetCustomerDetail(req request.GetCustomers) (*response.GetCustomersResponse, error) {
+	resp, err := customers.GetCustomers(req)
 	if err != nil {
 		fmt.Printf("Error Get customers : %v", err)
 		return nil, err

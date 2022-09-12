@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	sv := server.Register()
+	// sv := server.Register()
 
-	sv.Start()
+	server.Start()
 }

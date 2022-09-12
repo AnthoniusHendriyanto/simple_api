@@ -1,22 +1,16 @@
 package handlers
 
-import (
-	"net/http"
+// type customerHandler struct {
+// 	services services.Repository
+// }
 
-	"simple_api/services"
-)
+// type Repository interface {
+// 	CreateCustomerHandler(w http.ResponseWriter, r *http.Request)
+// 	GetCustomerHandler(w http.ResponseWriter, r *http.Request)
+// }
 
-type customerHandler struct {
-	services services.Repository
-}
-
-type Repository interface {
-	CreateCustomerHandler(w http.ResponseWriter, r *http.Request)
-	GetCustomerHandler(w http.ResponseWriter, r *http.Request)
-}
-
-func New(s services.Repository) *customerHandler {
-	return &customerHandler{
-		services: s,
-	}
-}
+// func New(s services.Repository) *customerHandler {
+// 	return &customerHandler{
+// 		services: s,
+// 	}
+// }
